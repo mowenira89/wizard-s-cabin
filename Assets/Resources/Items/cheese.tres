@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://da4joes5cf5qn"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_0ukfx"]
+
+[resource]
+script = ExtResource("1_0ukfx")
+cook_time = 0
+data_name = "cheese"
+name = "Cheese"
+description = "Sweet coagulated milk protein."
+keywords = Array[int]([5, 9])
+value = 9
+stackable = true
+protein = 15
+nutrients = 5
+painkilling = 0
+feverfighting = 0
+decongestant = false
+hp_recovered = 0
+energy_recovered = 10
+will_recovered = 0
+hunger_recovered = 0

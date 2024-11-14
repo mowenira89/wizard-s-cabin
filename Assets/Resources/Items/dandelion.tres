@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://bud33plipblq0"]
+
+[ext_resource type="Script" path="res://Assets/Resources/ItemData.gd" id="1_ot4a5"]
+
+[resource]
+script = ExtResource("1_ot4a5")
+data_name = "dandelion"
+name = "Dandelion"
+description = "A smell yellow flower"
+keywords = Array[int]([2, 0, 3, 5])
+value = 0
+stackable = true
+protein = 0
+nutrients = 5
+painkilling = 0
+feverfighting = 0
+decongestant = false
+hp_recovered = 0
+energy_recovered = 5
+will_recovered = 0
+hunger_recovered = 0

@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjnunv6dliuis"]
+
+[ext_resource type="Script" path="res://Assets/UI/player_stat_ui.gd" id="1_2yrlq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g64es"]
+bg_color = Color(0.255677, 0.700191, 0.415161, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mk77p"]
+bg_color = Color(0.745098, 0.803922, 0.278431, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34q4s"]
+bg_color = Color(0.553976, 0.414746, 0.216248, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4d0qi"]
+bg_color = Color(0.677019, 0.326693, 0.88721, 1)
+
+[node name="PlayerStats" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+script = ExtResource("1_2yrlq")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -216.0
+offset_bottom = 177.0
+grow_horizontal = 0
+columns = 2
+
+[node name="HPLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "HP:  "
+
+[node name="HPBar" type="ProgressBar" parent="GridContainer"]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_g64es")
+show_percentage = false
+
+[node name="EnergyLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Energy: "
+
+[node name="EnergyBar" type="ProgressBar" parent="GridContainer"]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_mk77p")
+show_percentage = false
+
+[node name="HungerLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Hunger"
+
+[node name="HungerBar" type="ProgressBar" parent="GridContainer"]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_34q4s")
+show_percentage = false
+
+[node name="WillLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Will"
+
+[node name="WillBar" type="ProgressBar" parent="GridContainer"]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_4d0qi")
+show_percentage = false

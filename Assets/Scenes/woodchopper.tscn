@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlpokot2sehhc"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/woodchopper.gd" id="1_lwhd5"]
+[ext_resource type="Texture2D" uid="uid://b1licmlr8sjt5" path="res://Assets/Art/UI/pointer.png" id="1_qcs5y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amqa0"]
+size = Vector2(13.4217, 87.1205)
+
+[sub_resource type="Animation" id="Animation_qj7ls"]
+resource_name = "move"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/ColorRect/Pointer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(38, -20), Vector2(383, -20)]
+}
+
+[sub_resource type="Animation" id="Animation_pybvc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/ColorRect/Pointer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(38, -20)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6218"]
+_data = {
+"RESET": SubResource("Animation_pybvc"),
+"move": SubResource("Animation_qj7ls")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lwhd5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 394.0
+offset_bottom = 93.0
+color = Color(0.626569, 0.424996, 0.301401, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -5.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.733333, 0.639216, 0.639216, 1)
+
+[node name="Target" type="Sprite2D" parent="ColorRect/ColorRect"]
+position = Vector2(37, 30)
+scale = Vector2(0.584507, 0.584507)
+texture = ExtResource("1_qcs5y")
+
+[node name="Area2D" type="Area2D" parent="ColorRect/ColorRect/Target"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ColorRect/ColorRect/Target/Area2D"]
+polygon = PackedVector2Array(-3.42169, -34.2169, 46.1928, 20.5301, -51.3253, 27.3735)
+
+[node name="Pointer" type="Sprite2D" parent="ColorRect/ColorRect"]
+position = Vector2(38, -20)
+rotation = 3.14159
+scale = Vector2(0.584507, 0.584507)
+texture = ExtResource("1_qcs5y")
+
+[node name="RayCast2D" type="Area2D" parent="ColorRect/ColorRect/Pointer" groups=["Axe"]]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="ColorRect/ColorRect/Pointer/RayCast2D"]
+position = Vector2(-1.52588e-05, -35.1385)
+shape = SubResource("RectangleShape2D_amqa0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q6218")
+}
+
+[connection signal="area_entered" from="ColorRect/ColorRect/Target/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="ColorRect/ColorRect/Target/Area2D" to="." method="_on_area_2d_area_exited"]

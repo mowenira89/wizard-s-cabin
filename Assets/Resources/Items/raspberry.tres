@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://b8i4qi1tkq4w4"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_xixp1"]
+
+[resource]
+script = ExtResource("1_xixp1")
+cook_time = 0
+data_name = "raspberry"
+name = "Raspberry"
+description = "A tangy red berry. "
+keywords = Array[int]([7, 9])
+value = 1
+stackable = true
+protein = 0
+nutrients = 15
+painkilling = 0
+feverfighting = 0
+decongestant = false
+hp_recovered = 0
+energy_recovered = 10
+will_recovered = 0
+hunger_recovered = 5

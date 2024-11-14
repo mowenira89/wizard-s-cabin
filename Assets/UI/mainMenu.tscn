@@ -1,0 +1,109 @@
+[gd_scene load_steps=4 format=3 uid="uid://ycs5dv6viqft"]
+
+[ext_resource type="Script" path="res://Assets/UI/main_menu.gd" id="1_81h0f"]
+[ext_resource type="PackedScene" uid="uid://cjnunv6dliuis" path="res://Assets/UI/PlayerStatUI.tscn" id="2_2cmpp"]
+[ext_resource type="Texture2D" uid="uid://bsuu3y6odtpk" path="res://Assets/Art/UI/ninepatch.png" id="2_ausyq"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_81h0f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Hotbar" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="InteractionContainer" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="Panel" type="ColorRect" parent="InteractionContainer"]
+visible = false
+custom_minimum_size = Vector2(500, 30)
+layout_mode = 2
+color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+
+[node name="Label" type="Label" parent="InteractionContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenu" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -458.0
+offset_top = -317.0
+offset_right = 342.0
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu"]
+layout_mode = 2
+
+[node name="Inventory" type="Button" parent="MainMenu/HBoxContainer"]
+layout_mode = 2
+text = "Inventory"
+
+[node name="Button2" type="Button" parent="MainMenu/HBoxContainer"]
+layout_mode = 2
+text = "Crafting"
+
+[node name="Button3" type="Button" parent="MainMenu/HBoxContainer"]
+layout_mode = 2
+text = "Crafting"
+
+[node name="Game" type="Button" parent="MainMenu/HBoxContainer"]
+layout_mode = 2
+text = "Game"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MainMenu"]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 2
+texture = ExtResource("2_ausyq")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu/NinePatchRect"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 52.0
+offset_bottom = 52.0
+
+[node name="PlayerStats" parent="." instance=ExtResource("2_2cmpp")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 0
+
+[connection signal="pressed" from="MainMenu/HBoxContainer/Inventory" to="." method="_on_inventory_pressed"]
+[connection signal="pressed" from="MainMenu/HBoxContainer/Game" to="." method="_on_game_pressed"]

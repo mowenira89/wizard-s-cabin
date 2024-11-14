@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Sibling" load_steps=2 format=3 uid="uid://bwqamjrf3cqws"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Sibling.gd" id="1_5vgyu"]
+
+[resource]
+script = ExtResource("1_5vgyu")
+max_hp = 10
+hp = 10
+max_will = 10
+will = 10
+max_energy = 40
+energy = 40
+hunger = 100
+strength = 100
+max_strength = 100
+charisma = 5

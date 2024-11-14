@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://dg4i1tpl56ha3"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_g51rp"]
+
+[resource]
+script = ExtResource("1_g51rp")
+cook_time = 0
+data_name = "wolfberry"
+name = "Wolfberry"
+description = "A sweet red berry"
+keywords = Array[int]([7, 3])
+value = 1
+stackable = true
+protein = 0
+nutrients = 10
+painkilling = 0
+feverfighting = 0
+decongestant = false
+hp_recovered = 0
+energy_recovered = 5
+will_recovered = 0
+hunger_recovered = 0

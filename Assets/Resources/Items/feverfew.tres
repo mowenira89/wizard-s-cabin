@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://dx57ll2hlkqol"]
+
+[ext_resource type="Script" path="res://Assets/Resources/ItemData.gd" id="1_i5ro8"]
+
+[resource]
+script = ExtResource("1_i5ro8")
+data_name = "feverfew"
+name = "Feverfew"
+description = "An herb used to reduce fevers."
+keywords = Array[int]([0, 2, 5, 9])
+value = 4
+stackable = true
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 1
+decongestant = false
+hp_recovered = 0
+energy_recovered = 5
+will_recovered = 0
+hunger_recovered = 5

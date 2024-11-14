@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Entity" load_steps=2 format=3 uid="uid://1rcjqhyqq5j5"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/entity.gd" id="1_7bqgi"]
+
+[resource]
+script = ExtResource("1_7bqgi")
+max_hp = 20
+hp = 20
+max_will = 50
+will = 50
+max_energy = 100
+energy = 100
+hunger = 100
+strength = 5
+max_strength = 5
+charisma = 3

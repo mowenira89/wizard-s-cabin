@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://deo482pxsd0b2"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/forage_node.gd" id="1_jk13n"]
+
+[node name="ForageNode" type="Marker2D"]
+script = ExtResource("1_jk13n")

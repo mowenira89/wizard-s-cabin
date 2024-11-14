@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://cmg205gamwkno"]
+
+[ext_resource type="Script" path="res://Assets/Resources/ItemData.gd" id="1_aljrt"]
+
+[resource]
+script = ExtResource("1_aljrt")
+data_name = "mushroom"
+name = "Common Mushroom"
+description = "A regular mushroom. Tasty when grilled."
+keywords = Array[int]([1, 9])
+value = 0
+stackable = true
+protein = 10
+nutrients = 6
+painkilling = 0
+feverfighting = 0
+decongestant = false
+hp_recovered = 0
+energy_recovered = 2
+will_recovered = 0
+hunger_recovered = 3

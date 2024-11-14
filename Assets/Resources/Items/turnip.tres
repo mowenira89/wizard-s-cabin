@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://c3cat3dl5ywe4"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_7c3fy"]
+
+[resource]
+script = ExtResource("1_7c3fy")
+cook_time = 0
+data_name = "turnip"
+name = "Turnip"
+description = "A hearty root vegetable."
+keywords = Array[int]([9])
+value = 4
+stackable = true
+protein = 0
+nutrients = 25
+painkilling = 0
+feverfighting = 0
+decongestant = false
+hp_recovered = 0
+energy_recovered = 10
+will_recovered = 0
+hunger_recovered = 0

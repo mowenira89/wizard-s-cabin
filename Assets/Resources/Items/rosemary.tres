@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://clh82jmifm357"]
+
+[ext_resource type="Script" path="res://Assets/Resources/ItemData.gd" id="1_6mg24"]
+
+[resource]
+script = ExtResource("1_6mg24")
+data_name = "rosemary"
+name = "Rosemary"
+description = "A tasty herb that has an odor pleasing to Daemons. "
+keywords = Array[int]([0, 9])
+value = 3
+stackable = true
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 0
+decongestant = false
+hp_recovered = 0
+energy_recovered = 0
+will_recovered = 0
+hunger_recovered = 0

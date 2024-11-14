@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8s5lpbaq1v2u"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/States/StateMachine.gd" id="1_472n1"]
+[ext_resource type="Script" path="res://Assets/Scripts/States/normal.gd" id="2_0regv"]
+[ext_resource type="Script" path="res://Assets/Scripts/States/menu.gd" id="3_dgl8j"]
+[ext_resource type="Script" path="res://Assets/Scripts/States/woodchopping.gd" id="4_gxvv7"]
+
+[node name="GameStateMachine" type="Node"]
+script = ExtResource("1_472n1")
+
+[node name="Normal" type="Node" parent="."]
+script = ExtResource("2_0regv")
+
+[node name="Menu" type="Node" parent="."]
+script = ExtResource("3_dgl8j")
+
+[node name="Woodchopping" type="Node" parent="."]
+script = ExtResource("4_gxvv7")

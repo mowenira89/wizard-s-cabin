@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://c2riwkiui7hun"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_3rbn2"]
+
+[resource]
+script = ExtResource("1_3rbn2")
+cook_time = 0
+data_name = "bluegill"
+name = "Bluegill"
+description = "A small fish."
+keywords = Array[int]([])
+value = 10
+stackable = true
+protein = 100
+nutrients = 25
+painkilling = 0
+feverfighting = 0
+decongestant = false
+hp_recovered = 0
+energy_recovered = 10
+will_recovered = 0
+hunger_recovered = 0
