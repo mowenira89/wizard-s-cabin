@@ -1,5 +1,6 @@
 class_name Sibling extends Entity
 
+var cool_with_daemons:bool
 
 var liked_foods = []
 var disliked_foods= []
@@ -36,39 +37,41 @@ func _ready():
 	
 	
 func new_day():
-	var symptoms=[sore_throat,stuffy_nose,insomnia,fever]
-	var s = symptoms.pick_random()
-	s=true
-	match s:
-		sore_throat: 
-			pain+=1
-			energy-=10
-		fever: 
-			fever_level+=1
-			energy-=20
+	if disease_strength>strength:
+		var symptoms=[sore_throat,stuffy_nose,insomnia,fever]
+		var s = symptoms.pick_random()
+		s=true
+		match s:
+			sore_throat: 
+				pain+=1
+				energy-=10
+			fever: 
+				fever_level+=1
+				energy-=20
 
 func set_sibling():
-	var flavors = InvManager.flavors
-	liked_foods.append(flavors.pop_at(randi_range(0,flavors.size())))
+	var flavors = InvManager.flavors.duplicate()
+	liked_foods.append(flavors.pop_at(randi_range(0,flavors.size()-1)))
 	if randi()%100>50:
-		liked_foods.append(flavors.pop_at(randi_range(0,flavors.size())))
+		liked_foods.append(flavors.pop_at(randi_range(0,flavors.size()-1)))
 	if randi()%100>80:
-		liked_foods.append(flavors.pop_at(randi_range(0,flavors.size())))
-	disliked_foods.append(flavors.pop_at(randi_range(0,flavors.size())))
+		liked_foods.append(flavors.pop_at(randi_range(0,flavors.size()-1)))
+	disliked_foods.append(flavors.pop_at(randi_range(0,flavors.size()-1)))
 	if randi()%100>50:
-		disliked_foods.append(flavors.pop_at(randi_range(0,flavors.size())))
+		disliked_foods.append(flavors.pop_at(randi_range(0,flavors.size()-1)))
 	if randi()%100>50:
-		disliked_foods.append(flavors.pop_at(randi_range(0,flavors.size())))
+		disliked_foods.append(flavors.pop_at(randi_range(0,flavors.size()-1)))
 	if randi()%100>80:
-		disliked_foods.append(flavors.pop_at(randi_range(0,flavors.size())))
+		disliked_foods.append(flavors.pop_at(randi_range(0,flavors.size()-1)))
 	
-	var incenses = InvManager.incenses
-	liked_scents.append(incenses.pick_random())
-	if randi()%50:	liked_scents.append(incenses.pick_random())
-	disliked_scents.append(incenses.pick_random())
-	if randi()%50: 	disliked_scents.append(incenses.pick_random())
+	var incenses = InvManager.incenses.duplicate()
+	liked_scents.append(incenses.pop_at(randi()%incenses.size()))
+	if randi()%50:	liked_scents.append(incenses.pop_at(randi()%incenses.size()))
+	disliked_scents.append(incenses.pop_at(randi()%incenses.size()))
+	if randi()%50: 	disliked_scents.append(incenses.pop_at(randi()%incenses.size()))
 
-
+	var b=[true,false]
+	cool_with_daemons=b.pick_random()
 	
 	
 	
@@ -108,9 +111,9 @@ func eat(food:Meal):
 	for x in food.ingredients:
 		var d = load("res://Assets/Resources/Items/"+x+".tres")
 		if d.painkilling:
-			change_pain(d.painkilling)
+			change_pain(-d.painkilling)
 		if d.feverfighter:
-			change_fever_level(d.feverkilling)
+			change_fever_level(-d.feverfighting)
 		if d.decongestant:
 			stuffy_nose=false
 		

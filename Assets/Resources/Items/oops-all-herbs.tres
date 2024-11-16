@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://dcarho4s1xrmq"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_24v8s"]
+
+[resource]
+script = ExtResource("1_24v8s")
+cook_time = 1
+data_name = "oops-all-herbs"
+name = "Herbal Remedy"
+description = "Plain old medicine."
+keywords = Array[int]([])
+value = 4
+stackable = false
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 0
+decongestant = false
+nausea = false
+antinausea = false
+hp_recovered = 0
+energy_recovered = 0
+will_recovered = 0
+hunger_recovered = 0
+burnable = false
+burn_time = 0

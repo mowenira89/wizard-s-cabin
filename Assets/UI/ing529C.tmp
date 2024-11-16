@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://n8gvty1o36ih"]
+
+[ext_resource type="Texture2D" uid="uid://lf13fiumrx6" path="res://Assets/Art/UI/wordballoon.png" id="1_4dfdu"]
+[ext_resource type="Script" path="res://Assets/UI/ingredient_balloon.gd" id="2_ymiy7"]
+
+[node name="ingredient1" type="TextureButton"]
+z_index = 2
+y_sort_enabled = true
+offset_left = -30.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 15.0
+texture_normal = ExtResource("1_4dfdu")
+script = ExtResource("2_ymiy7")
+
+[node name="i1Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

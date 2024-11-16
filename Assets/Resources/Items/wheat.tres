@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://0ut6e4sd4i7r"]
+
+[ext_resource type="Script" path="res://Assets/Resources/ItemData.gd" id="1_2msm4"]
+
+[resource]
+script = ExtResource("1_2msm4")
+data_name = "wheat"
+name = "Wheat"
+description = "A cereal ground into flour."
+keywords = Array[int]([9])
+value = 1
+stackable = true
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 0
+decongestant = false
+hp_recovered = 0
+energy_recovered = 0
+will_recovered = 0
+hunger_recovered = 0
+burnable = false
+burn_time = 0

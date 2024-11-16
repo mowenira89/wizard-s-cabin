@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://kimy4gtit4d7"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_agnjt"]
+
+[resource]
+script = ExtResource("1_agnjt")
+cook_time = 1
+data_name = "sweetened-fruit"
+name = "Sweetened Fruit"
+description = "Fruit sweetened with honey."
+keywords = Array[int]([3])
+value = 0
+stackable = false
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 0
+decongestant = false
+nausea = false
+antinausea = false
+hp_recovered = 0
+energy_recovered = 30
+will_recovered = 0
+hunger_recovered = 30
+burnable = false
+burn_time = 0

@@ -3,6 +3,7 @@ extends Node
 var player:Player
 var movement_speed:int=200
 var data:Entity
+var crafting_menu:Array[String]
 
 func _ready():
 	data=load("res://Assets/Resources/Entities/player.tres").duplicate()

@@ -11,6 +11,8 @@ class_name Entity extends Resource
 @export var max_strength:int
 @export var charisma:int
 
+var nausea:bool=false
+
 var protein:int=50
 var nutrients:int=50
 var malnutrition:bool

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://bs0qmr15yyu3o"]
+
+[ext_resource type="Script" path="res://Assets/Resources/ItemData.gd" id="1_547l5"]
+
+[resource]
+script = ExtResource("1_547l5")
+data_name = "bread"
+name = "Bread"
+description = "Food made from flour."
+keywords = Array[int]([3])
+value = 6
+stackable = true
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 0
+decongestant = false
+nausea = false
+antinausea = false
+hp_recovered = 0
+energy_recovered = 50
+will_recovered = 10
+hunger_recovered = 70
+burnable = false
+burn_time = 0

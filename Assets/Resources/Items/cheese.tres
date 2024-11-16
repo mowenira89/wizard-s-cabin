@@ -4,19 +4,23 @@
 
 [resource]
 script = ExtResource("1_0ukfx")
-cook_time = 0
+cook_time = 10
 data_name = "cheese"
 name = "Cheese"
 description = "Sweet coagulated milk protein."
 keywords = Array[int]([5, 9])
-value = 9
+value = 3
 stackable = true
 protein = 15
 nutrients = 5
 painkilling = 0
 feverfighting = 0
 decongestant = false
+nausea = false
+antinausea = false
 hp_recovered = 0
 energy_recovered = 10
 will_recovered = 0
-hunger_recovered = 0
+hunger_recovered = 40
+burnable = false
+burn_time = 0

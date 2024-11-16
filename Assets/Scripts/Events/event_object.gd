@@ -24,6 +24,4 @@ func start_event():
 	pass
 
 func end_event():
-	for x in list:
-		if x is EventObject and x.id==id:
-			list.erase(x)
+	pass

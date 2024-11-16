@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diopp0epjld5o"
-path="res://.godot/imported/mush1.png-30e591385c84e06399c9159caf90bf8a.ctex"
+uid="uid://cei7hu0hu8qtt"
+path="res://.godot/imported/wood.png-730512e9cd8db6252ee82ae2030ce70e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Items/mush1.png"
-dest_files=["res://.godot/imported/mush1.png-30e591385c84e06399c9159caf90bf8a.ctex"]
+source_file="res://Assets/Art/Items/wood.png"
+dest_files=["res://.godot/imported/wood.png-730512e9cd8db6252ee82ae2030ce70e.ctex"]
 
 [params]
 

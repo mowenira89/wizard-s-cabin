@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://bjxb7b2kxnp0p"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_52ppm"]
+
+[resource]
+script = ExtResource("1_52ppm")
+cook_time = 10
+data_name = "fish-stew"
+name = "Fish Stew"
+description = "Stew made of fish!"
+keywords = Array[int]([3])
+value = 0
+stackable = true
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 0
+decongestant = false
+nausea = false
+antinausea = false
+hp_recovered = 3
+energy_recovered = 100
+will_recovered = 10
+hunger_recovered = 100
+burnable = false
+burn_time = 0

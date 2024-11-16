@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://duk27eb8si3ki"]
+
+[ext_resource type="Script" path="res://Assets/Resources/ItemData.gd" id="1_xm3t8"]
+
+[resource]
+script = ExtResource("1_xm3t8")
+data_name = "carp"
+name = "Carp"
+description = "A delectable bony fish."
+keywords = Array[int]([6, 9, 3])
+value = 30
+stackable = true
+protein = 50
+nutrients = 15
+painkilling = 0
+feverfighting = 0
+decongestant = false
+nausea = true
+antinausea = false
+hp_recovered = 2
+energy_recovered = 50
+will_recovered = 20
+hunger_recovered = 40
+burnable = false
+burn_time = 0

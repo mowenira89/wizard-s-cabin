@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://psymd30q0hwm"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_hqq2e"]
+
+[resource]
+script = ExtResource("1_hqq2e")
+cook_time = 1
+data_name = "weak-herbal-tea"
+name = "Weak Herbal Tea"
+description = "Tea but is it really?"
+keywords = Array[int]([3])
+value = 0
+stackable = false
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 0
+decongestant = false
+nausea = false
+antinausea = false
+hp_recovered = 0
+energy_recovered = 10
+will_recovered = 0
+hunger_recovered = 10
+burnable = false
+burn_time = 0

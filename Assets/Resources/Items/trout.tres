@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://dhltsim3n5akh"]
+
+[ext_resource type="Script" path="res://Assets/Resources/ItemData.gd" id="1_airf2"]
+
+[resource]
+script = ExtResource("1_airf2")
+data_name = "trout"
+name = "Trout"
+description = "A hearty river fish."
+keywords = Array[int]([6, 3, 9])
+value = 20
+stackable = true
+protein = 50
+nutrients = 15
+painkilling = 0
+feverfighting = 0
+decongestant = false
+nausea = true
+antinausea = false
+hp_recovered = 0
+energy_recovered = 20
+will_recovered = 10
+hunger_recovered = 50
+burnable = false
+burn_time = 0

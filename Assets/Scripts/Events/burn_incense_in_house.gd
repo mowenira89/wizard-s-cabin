@@ -9,3 +9,7 @@ func set_incense(i:String):
 func start_event():
 	CabinManager.odors.pop_at(0)
 	CabinManager.odors.append(self)
+	
+func end_event():
+	var x = CabinManager.odors.find(self)
+	CabinManager.odors.erase(x)

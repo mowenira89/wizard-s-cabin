@@ -17,7 +17,7 @@ func _ready():
 	Clock.ten_minutes.connect(ten_minutes)
 
 func ten_minutes():
-	if fire_fuel>0:	fire_fuel-=0.5
+	if fire_fuel>0:	change_fire(-0.5)
 	if Clock.hour>6 and !Clock.am:
 		outside_temp-=0.5
 	if Clock.hour>6 and Clock.am:
@@ -29,3 +29,6 @@ func update_temp():
 	var heat_output=fire_fuel/20
 	temp+=insulation*0.1
 	temp+=heat_output
+	
+func change_fire(num:float):
+	fire_fuel+=num

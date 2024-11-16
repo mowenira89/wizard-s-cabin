@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://ct2k4wt0ra8fu"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_8dv8h"]
+
+[resource]
+script = ExtResource("1_8dv8h")
+cook_time = 5
+data_name = "carrot-cake"
+name = "Carrot Cake"
+description = "Who would have thought to make cake of a vegetable?"
+keywords = Array[int]([3])
+value = 10
+stackable = true
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 0
+decongestant = false
+nausea = false
+antinausea = false
+hp_recovered = 5
+energy_recovered = 100
+will_recovered = 20
+hunger_recovered = 100
+burnable = false
+burn_time = 0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr2caa6k0kpin"
-path="res://.godot/imported/dandilion.png-ac4445d1a51e0a5c3d929a4dafe7b644.ctex"
+uid="uid://cdw1b1tc3mykk"
+path="res://.godot/imported/bluegill.png-64418619bfd8cb79d77a0459aac16d39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Items/dandilion.png"
-dest_files=["res://.godot/imported/dandilion.png-ac4445d1a51e0a5c3d929a4dafe7b644.ctex"]
+source_file="res://Assets/Art/Items/bluegill.png"
+dest_files=["res://.godot/imported/bluegill.png-64418619bfd8cb79d77a0459aac16d39.ctex"]
 
 [params]
 

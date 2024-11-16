@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://dyvyhqtmq2hi5"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_ldlrp"]
+
+[resource]
+script = ExtResource("1_ldlrp")
+cook_time = 10
+data_name = "cheesy-roasted-fish"
+name = "Cheesy Roasted Fish"
+description = "Cheesy roasty fishy. "
+keywords = Array[int]([3, 6])
+value = 0
+stackable = false
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 0
+decongestant = false
+nausea = false
+antinausea = false
+hp_recovered = 5
+energy_recovered = 100
+will_recovered = 10
+hunger_recovered = 100
+burnable = false
+burn_time = 0

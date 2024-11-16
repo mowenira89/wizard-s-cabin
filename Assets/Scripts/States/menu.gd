@@ -9,7 +9,6 @@ func init():
 func enter():
 	PlayerManager.player.can_move=false
 	MainMenu.open_main_menu()
-	MainMenu.disable_hotbar()
 	
 func exit():
 	pass
@@ -24,7 +23,6 @@ func handle_input(event:InputEvent)->State:
 	if event.is_action_pressed("x"):
 		return close_menu()
 	if event.is_action_pressed('esc'):
-		print('esc')
 		return close_menu()
 			 
 	return null

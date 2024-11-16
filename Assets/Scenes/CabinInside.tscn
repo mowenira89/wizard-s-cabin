@@ -1,17 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://bel0vua1wjhub"]
+[gd_scene load_steps=18 format=3 uid="uid://bel0vua1wjhub"]
 
 [ext_resource type="Texture2D" uid="uid://bl4ctpnm6k862" path="res://Assets/Art/Cabin/cabininside.png" id="1_02yhj"]
 [ext_resource type="Script" path="res://Assets/Scripts/cabin_inside.gd" id="1_i27px"]
-[ext_resource type="Texture2D" uid="uid://cqxsjiaei5ody" path="res://Assets/Art/Cabin/cauldronback.png" id="2_0ftgs"]
-[ext_resource type="Texture2D" uid="uid://dpoyhodvef0k6" path="res://Assets/Art/Cabin/cauldronwater.png" id="3_x6qfe"]
-[ext_resource type="Texture2D" uid="uid://dhcbi8ommmjxr" path="res://Assets/Art/Cabin/cauldronfront.png" id="4_qqul5"]
 [ext_resource type="Texture2D" uid="uid://cvbk07vxt56jq" path="res://Assets/Art/Cabin/fire.png" id="5_ak5sd"]
+[ext_resource type="PackedScene" uid="uid://drq2i21etv0s" path="res://Assets/UI/cauldron.tscn" id="5_cufsx"]
 [ext_resource type="Texture2D" uid="uid://ckyq5e3734idx" path="res://Assets/Art/Cabin/bedtop.png" id="6_8d72b"]
 [ext_resource type="PackedScene" uid="uid://mdb05lk35noj" path="res://Assets/Scenes/player.tscn" id="7_sg7yc"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pa8o0"]
-radius = 35.0
-height = 70.0
+[ext_resource type="Texture2D" uid="uid://bsuu3y6odtpk" path="res://Assets/Art/UI/ninepatch.png" id="9_tgm7q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oa438"]
 atlas = ExtResource("5_ak5sd")
@@ -61,16 +56,18 @@ radius = 85.0235
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1vk8"]
 size = Vector2(104, 20)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jdi0t"]
+
 [node name="CabinInside" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(-4, 184)
 script = ExtResource("1_i27px")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -575.0
-offset_top = -382.0
-offset_right = 668.0
-offset_bottom = 460.0
+offset_left = -1426.0
+offset_top = -533.0
+offset_right = 1993.0
+offset_bottom = 1505.0
 color = Color(0, 0, 0, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -82,25 +79,8 @@ texture = ExtResource("1_02yhj")
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(276, 52, 176, 56, 170, 19, -161, 15, -167, 56, -265, 63, -265, 102, -166, 95, -162, 213, -190, 219, -188, 306, -64.1283, 305.671, -67, 339, 45, 336, 42, 306, 188, 305, 195, 219, 170, 218, 169, 111, 280, 105, 290, 37, 308, 336, -321, 345, -318, -40, 300, -35)
 
-[node name="Cauldron" type="StaticBody2D" parent="StaticBody2D"]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-11, 127)
-
-[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D/Cauldron"]
-texture = ExtResource("2_0ftgs")
-
-[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D/Cauldron"]
-texture = ExtResource("4_qqul5")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Cauldron"]
-texture = ExtResource("3_x6qfe")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Cauldron"]
-shape = SubResource("CapsuleShape2D_pa8o0")
-
 [node name="Player" parent="." instance=ExtResource("7_sg7yc")]
-position = Vector2(64, 109)
+position = Vector2(-11, 282)
 
 [node name="BedLeft" type="Sprite2D" parent="."]
 z_index = 1
@@ -113,6 +93,9 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(224, 113)
 texture = ExtResource("6_8d72b")
+
+[node name="Cauldron" parent="." instance=ExtResource("5_cufsx")]
+position = Vector2(-50, 88)
 
 [node name="Fire" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -137,11 +120,12 @@ shape = SubResource("RectangleShape2D_vrm41")
 position = Vector2(-352, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChestSibling"]
-visible = false
 position = Vector2(181.5, 260)
 shape = SubResource("RectangleShape2D_vrm41")
 
 [node name="CauldronInteractArea" type="Area2D" parent="."]
+visible = false
+input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CauldronInteractArea"]
 position = Vector2(-10, 160)
@@ -153,6 +137,56 @@ shape = SubResource("CircleShape2D_nog07")
 position = Vector2(-12, 327)
 shape = SubResource("RectangleShape2D_n1vk8")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="UI" type="NinePatchRect" parent="CanvasLayer"]
+visible = false
+offset_left = -271.0
+offset_top = 149.0
+offset_right = 259.0
+offset_bottom = 379.0
+size_flags_horizontal = 4
+texture = ExtResource("9_tgm7q")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 21.0
+offset_right = 55.0
+offset_bottom = 61.0
+
+[node name="Button" type="Button" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 182.0
+offset_right = 515.0
+offset_bottom = 213.0
+text = "Back"
+
+[node name="CookingUI" type="NinePatchRect" parent="CanvasLayer"]
+visible = false
+offset_left = -546.0
+offset_top = 179.0
+offset_right = -80.0
+offset_bottom = 539.0
+texture = ExtResource("9_tgm7q")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Squeak" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Squeak"]
+position = Vector2(-148, 37)
+shape = SubResource("CircleShape2D_jdi0t")
+
 [connection signal="body_entered" from="Fire/FireArea" to="." method="_on_fire_area_body_entered"]
 [connection signal="body_entered" from="ChestPlayer" to="." method="_on_chest_player_body_entered"]
 [connection signal="body_exited" from="ChestPlayer" to="." method="_on_chest_player_body_exited"]
@@ -161,3 +195,6 @@ shape = SubResource("RectangleShape2D_n1vk8")
 [connection signal="body_entered" from="CauldronInteractArea" to="." method="_on_cauldron_interact_area_body_entered"]
 [connection signal="body_exited" from="CauldronInteractArea" to="." method="_on_cauldron_interact_area_body_exited"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
+[connection signal="pressed" from="CanvasLayer/UI/Button" to="." method="_on_button_pressed"]
+[connection signal="body_entered" from="Squeak" to="." method="_on_squeak_body_entered"]
+[connection signal="body_exited" from="Squeak" to="." method="_on_squeak_body_exited"]

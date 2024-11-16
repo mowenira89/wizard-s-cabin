@@ -6,6 +6,21 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amqa0"]
 size = Vector2(13.4217, 87.1205)
 
+[sub_resource type="Animation" id="Animation_pybvc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/ColorRect/Pointer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(38, -20)]
+}
+
 [sub_resource type="Animation" id="Animation_qj7ls"]
 resource_name = "move"
 loop_mode = 2
@@ -20,21 +35,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(38, -20), Vector2(383, -20)]
-}
-
-[sub_resource type="Animation" id="Animation_pybvc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect/ColorRect/Pointer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(38, -20)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q6218"]
@@ -71,7 +71,7 @@ texture = ExtResource("1_qcs5y")
 [node name="Area2D" type="Area2D" parent="ColorRect/ColorRect/Target"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ColorRect/ColorRect/Target/Area2D"]
-polygon = PackedVector2Array(-3.42169, -34.2169, 46.1928, 20.5301, -51.3253, 27.3735)
+polygon = PackedVector2Array(-8.55422, -32.506, 11.9759, -32.506, 46.1928, 20.5301, -51.3253, 27.3735)
 
 [node name="Pointer" type="Sprite2D" parent="ColorRect/ColorRect"]
 position = Vector2(38, -20)
@@ -89,6 +89,13 @@ shape = SubResource("RectangleShape2D_amqa0")
 libraries = {
 "": SubResource("AnimationLibrary_q6218")
 }
+
+[node name="Label" type="Label" parent="."]
+offset_left = 14.0
+offset_top = -29.0
+offset_right = 54.0
+offset_bottom = -6.0
+text = "Press F to chop wood. Press x to exit."
 
 [connection signal="area_entered" from="ColorRect/ColorRect/Target/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="ColorRect/ColorRect/Target/Area2D" to="." method="_on_area_2d_area_exited"]

@@ -22,7 +22,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func _input(event: InputEvent) -> void:
 	if in_range:
 		if event.is_action_pressed("f"):
-			if InvManager.add_inv_item(item):
+			if InvManager.add_inv_item(item,InvManager.inventory):
 				if forage_node!=null: forage_node.set_timer()
 				Signals.pickup_picked_up.emit()
 				queue_free()

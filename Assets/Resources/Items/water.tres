@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://beqfp8rca5aku"]
+
+[ext_resource type="Script" path="res://Assets/Resources/ItemData.gd" id="1_lt6b6"]
+
+[resource]
+script = ExtResource("1_lt6b6")
+data_name = "water"
+name = "Bucket of Water"
+description = "A bucket of water. "
+keywords = Array[int]([])
+value = 0
+stackable = true
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 0
+decongestant = false
+hp_recovered = 0
+energy_recovered = 10
+will_recovered = 0
+hunger_recovered = 0
+burnable = false
+burn_time = 0

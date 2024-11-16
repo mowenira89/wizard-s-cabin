@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://drq2i21etv0s"]
+
+[ext_resource type="Script" path="res://Assets/UI/cauldron.gd" id="1_bmubn"]
+[ext_resource type="Texture2D" uid="uid://cqxsjiaei5ody" path="res://Assets/Art/Cabin/cauldronback.png" id="1_wduu8"]
+[ext_resource type="Texture2D" uid="uid://dhcbi8ommmjxr" path="res://Assets/Art/Cabin/cauldronfront.png" id="2_npl8v"]
+[ext_resource type="Texture2D" uid="uid://dpoyhodvef0k6" path="res://Assets/Art/Cabin/cauldronwater.png" id="3_y4kq5"]
+[ext_resource type="PackedScene" uid="uid://n8gvty1o36ih" path="res://Assets/UI/ingredient_balloon.tscn" id="4_p8p31"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pa8o0"]
+radius = 13.0
+height = 64.0
+
+[node name="Cauldron" type="StaticBody2D"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-43, -57)
+input_pickable = true
+script = ExtResource("1_bmubn")
+
+[node name="Sprite2D3" type="TextureButton" parent="."]
+z_index = 1
+y_sort_enabled = true
+mouse_filter = 1
+texture_normal = ExtResource("1_wduu8")
+
+[node name="Sprite2D2" type="TextureButton" parent="."]
+z_index = 1
+y_sort_enabled = true
+mouse_filter = 1
+texture_normal = ExtResource("2_npl8v")
+
+[node name="Water" type="TextureRect" parent="."]
+visible = false
+z_index = 1
+y_sort_enabled = true
+texture = ExtResource("3_y4kq5")
+
+[node name="ingredient1" parent="." instance=ExtResource("4_p8p31")]
+visible = false
+offset_left = -34.0
+offset_top = -29.0
+offset_right = 9.0
+offset_bottom = 11.0
+ingred_num = 1
+
+[node name="ingredient2" parent="." instance=ExtResource("4_p8p31")]
+visible = false
+offset_left = 69.0
+offset_top = -27.0
+offset_right = 112.0
+offset_bottom = 13.0
+flip_h = true
+ingred_num = 2
+
+[node name="ingredient3" parent="." instance=ExtResource("4_p8p31")]
+visible = false
+offset_left = 23.0
+offset_top = -42.0
+offset_right = 66.0
+offset_bottom = -2.0
+flip_h = true
+ingred_num = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(41, 53)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_pa8o0")
+
+[node name="CookButton" type="Button" parent="."]
+visible = false
+offset_left = 17.0
+offset_top = -34.0
+offset_right = 64.0
+offset_bottom = -3.0
+mouse_filter = 1
+text = "Cook"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="pressed" from="CookButton" to="." method="_on_cook_button_pressed"]

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://bfu72xh1bylvr"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_kpk3l"]
+
+[resource]
+script = ExtResource("1_kpk3l")
+cook_time = 3
+data_name = "omelette"
+name = "Omelette"
+description = "Cheese sandwiched in egg."
+keywords = Array[int]([3])
+value = 0
+stackable = true
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 0
+decongestant = false
+nausea = false
+antinausea = false
+hp_recovered = 0
+energy_recovered = 60
+will_recovered = 0
+hunger_recovered = 50
+burnable = false
+burn_time = 0

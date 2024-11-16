@@ -3,70 +3,103 @@ extends Node2D
 var inventory_size=20
 var inventory: Array[Item] = []
 const slot = preload("res://Assets/UI/InvSlot.tscn")
+const preview_ref = preload("res://Assets/UI/inv_preview.tscn")
 signal update_inventory
 var first_slot:InvSlot
 var preview:TextureRect
+var your_chest:Array[Item]=[]
+var sibling_chest:Array[Item]=[]
 
-var incenses = ['thyme','rosemary','chamomile','feverfew','poppy']
-var flavors = ['thyme','sage','rosemary','dandelion','poppy','chamomile', 'carp', 'trout','bluegill','wolfberry','raspberry','mushroom', 'egg', 'apple','cheese']
+var incenses = ['thyme','rosemary','chamomile','feverfew','poppy','sage','peppermint']
+var flavors = ['thyme','sage','rosemary','dandelion','poppy','chamomile', 'carp', 'trout','bluegill','wolfberry','raspberry','mushroom', 'egg', 'apple','cheese','turnip','carrot','bread','peppermint']
 
 func _ready():
 	inventory.resize(inventory_size)
+	your_chest.resize(20)
+	sibling_chest.resize(20)
 	Signals.inv_slot_clicked.connect(inv_slot_clicked)
+	Signals.inv_slot_right_clicked.connect(inv_slot_right_clicked)
+	var wood = Item.new()
+	wood.set_item('wood',5)
+	inventory[0]=wood
+	var trout=Item.new()
+	trout.set_item('trout',1)
+	inventory[1]=trout
 	
-func add_inv_item(item:Item):
-	for x in inventory_size:	
-		if inventory[x]!=null and inventory[x].data_name==item.data_name:
-			inventory[x].quantity+=item.quantity
+func add_inv_item(item:Item,inv:Array[Item]):
+	for x in inv.size()-1:	
+		if inv[x]!=null and inv[x].data_name==item.data_name and item.data.stackable:
+			inv[x].quantity+=item.quantity
 			update_inventory.emit()
+			MainMenu.set_notification("Obtained "+item.data.name+" x"+str(item.quantity))
 			return true
-	for x in inventory_size:
-		if inventory[x] == null:
-			inventory[x]=item
+	for x in inv.size()-1:
+		if inv[x] == null:
+			inv[x]=item
 			update_inventory.emit()
+			MainMenu.set_notification("Obtained "+item.data.name+" x"+str(item.quantity))
 			return true
 	return false
 	
-func remove_item(index:int, amount:int):
-	if inventory[index]!=null:
-		if inventory[index].quantity-amount < 0: return false
-		if inventory[index].quantity-amount==0:
-			inventory[index]=null
+func remove_item(index:int, amount:int, inv:Array[Item]):
+	if inv[index]!=null:
+		if inv[index].quantity-amount < 0: return false
+		if inv[index].quantity-amount==0:
+			inv[index]=null
+			update_inventory.emit()
 			return true
-		inventory[index].quantity-=amount
+		inv[index].quantity-=amount
+		update_inventory.emit()
 		return true
 	else: return false
 		
 
 func inv_slot_clicked(slot:InvSlot):
-	if first_slot==null:
-		first_slot=slot
-		first_slot.icon.visible=false
-		preview=create_preview(first_slot)
-	else:
-		
-		if slot.item!=null and first_slot.item.data_name==slot.item.data_name:
-			first_slot.item.quantity+=slot.item.quantity
-			preview.queue_free()
+	#create preview if none
+	if preview==null and slot.item!=null:
+		create_preview(slot)
+	#preview, click on empty slot
+	elif preview!=null and slot.item==null:
+		print('t')
+		slot.inventory[slot.slot_index]=preview.item
+		update_inventory.emit()
+		preview.queue_free()
+	#preview click on occupied slot
+	elif preview!=null and slot.item!=null:
+		#stackable
+		if preview.item.data_name==slot.item.data_name:
+			slot.item.quantity+=preview.item.quantity
 			update_inventory.emit()
+			preview.queue_free()
 		else:
-			var temp = slot.item
-			var first_index = first_slot.get_parent().get_children().find(first_slot)
-			var second_index = slot.get_parent().get_children().find(slot)
-			slot.inventory[second_index] = first_slot.item
-			first_slot.inventory[first_index]=temp
-			update_inventory.emit()
+			#not stackable
+			var temp = preview.item.duplicate()
+			create_preview(slot)
+			slot.inventory[slot.slot_index]=temp
 			preview.queue_free()
-			slot.icon.visible=false
-			preview = create_preview(slot)
 			
-func create_preview(slot:InvSlot):
-	var t = TextureRect.new()
-	get_tree().root.add_child(t)
-	t.texture = slot.icon.texture
-	t.mouse_filter=Control.MOUSE_FILTER_IGNORE
-	t.z_index=2
-	return t
+			update_inventory.emit()			
+		
+func inv_slot_right_clicked(s:InvSlot):
+	if s.item.data.stackable:
+		first_slot=s
+		var slotq=s.item.quantity/2
+		var previewq=s.item.quantity/2+s.item.quantity%2
+		first_slot.item.quantity=slotq
+		var preview_item = Item.new()
+		preview_item.set_item(first_slot.item.data_name,previewq)
+		create_preview(preview_item)
+		
+
+func create_preview(i:InvSlot):
+	var p = preview_ref.instantiate()
+	add_child(p)
+	p.create_preview(i.item)
+	preview=p
+	i.inventory[i.slot_index]=null
+	first_slot=i
+	update_inventory.emit()
+	
 
 func _physics_process(delta: float) -> void:
 	if preview!=null:

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://ws6cdqtlqah4"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_bgec2"]
+
+[resource]
+script = ExtResource("1_bgec2")
+cook_time = 10
+data_name = "roasted-fish"
+name = "Roasted Fish"
+description = "Fish that has been roasted. "
+keywords = Array[int]([6, 3])
+value = 0
+stackable = false
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 0
+decongestant = false
+nausea = false
+antinausea = false
+hp_recovered = 4
+energy_recovered = 100
+will_recovered = 10
+hunger_recovered = 100
+burnable = false
+burn_time = 0

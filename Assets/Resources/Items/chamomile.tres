@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://ch560njnutibj"]
+
+[ext_resource type="Script" path="res://Assets/Resources/ItemData.gd" id="1_v4jqr"]
+
+[resource]
+script = ExtResource("1_v4jqr")
+data_name = "chamomile"
+name = "Chamomile"
+description = "A small white flower with pain soothing properties."
+keywords = Array[int]([0, 2, 9])
+value = 2
+stackable = true
+protein = 0
+nutrients = 0
+painkilling = 1
+feverfighting = 0
+decongestant = false
+nausea = false
+antinausea = true
+hp_recovered = 0
+energy_recovered = 0
+will_recovered = 0
+hunger_recovered = 0
+burnable = false
+burn_time = 0

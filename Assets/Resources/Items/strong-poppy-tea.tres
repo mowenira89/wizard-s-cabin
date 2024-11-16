@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://cuvirm0ujxr62"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_kct6n"]
+
+[resource]
+script = ExtResource("1_kct6n")
+cook_time = 10
+data_name = "strong-poppytea"
+name = "Strong Poppy Tea"
+description = "Poppy tea but stronger."
+keywords = Array[int]([3])
+value = 10
+stackable = true
+protein = 0
+nutrients = 0
+painkilling = 2
+feverfighting = 0
+decongestant = false
+nausea = false
+antinausea = false
+hp_recovered = 0
+energy_recovered = 0
+will_recovered = 0
+hunger_recovered = 0
+burnable = false
+burn_time = 0

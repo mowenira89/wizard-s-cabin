@@ -19,4 +19,6 @@ decongestant = false
 hp_recovered = 0
 energy_recovered = 10
 will_recovered = 0
-hunger_recovered = 0
+hunger_recovered = 20
+burnable = false
+burn_time = 0

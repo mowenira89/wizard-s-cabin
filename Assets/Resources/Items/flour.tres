@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://qc1hxxtjorci"]
+
+[ext_resource type="Script" path="res://Assets/Resources/ItemData.gd" id="1_xot5k"]
+
+[resource]
+script = ExtResource("1_xot5k")
+data_name = "flour"
+name = "Flour"
+description = "Milled ears of wheat."
+keywords = Array[int]([9])
+value = 4
+stackable = true
+protein = 5
+nutrients = 2
+painkilling = 0
+feverfighting = 0
+decongestant = false
+hp_recovered = 0
+energy_recovered = 0
+will_recovered = 0
+hunger_recovered = 0
+burnable = false
+burn_time = 0

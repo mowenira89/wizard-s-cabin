@@ -5,5 +5,5 @@ var ingredients:Array[String]
 func set_ingredients(i:Array[String]):
 	ingredients=i
 
-func use(target:Entity):
+func use(target:Entity=null):
 	target.eat(self)

@@ -5,8 +5,6 @@ var time_to_next:int
 var pickup_ref:Pickup=null
 
 func _ready():
-	if self not in ForageManager.nodes: 
-		ForageManager.nodes[self]=pickup_ref
 	if pickup_ref==null:
 		get_loot()
 

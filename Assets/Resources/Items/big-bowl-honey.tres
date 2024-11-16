@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://cuagjew1ecsi4"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_bg2ll"]
+
+[resource]
+script = ExtResource("1_bg2ll")
+cook_time = 2
+data_name = "big-bowl-honey"
+name = "Big Bowl O' Honey"
+description = "A big bowl o' honey. "
+keywords = Array[int]([3])
+value = 10
+stackable = true
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 0
+decongestant = false
+nausea = false
+antinausea = false
+hp_recovered = 0
+energy_recovered = 50
+will_recovered = 20
+hunger_recovered = 15
+burnable = false
+burn_time = 0

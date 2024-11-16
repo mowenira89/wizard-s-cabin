@@ -8,9 +8,11 @@ func init():
 	
 func enter():
 	PlayerManager.player.can_move=true
+	MainMenu.enable_hotbar()
 	
 func exit():
 	PlayerManager.player.can_move=false
+	MainMenu.disable_hotbar()
 	
 func process(delta)->State:
 	return null
@@ -21,4 +23,8 @@ func physics(delta)->State:
 func handle_input(event)->State:
 	if event.is_action_pressed('x'):
 		return menu
+	if event.is_action_pressed('MWU'):
+		MainMenu.change_equipped(-1)
+	if event.is_action_pressed('MWD'):
+		MainMenu.change_equipped(1)
 	return null

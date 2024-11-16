@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MealData" load_steps=2 format=3 uid="uid://c8827ad5a5b6x"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MealData.gd" id="1_uipdl"]
+
+[resource]
+script = ExtResource("1_uipdl")
+cook_time = 9
+data_name = "fruit-pie"
+name = "Fruit Fritter"
+description = "A delectable fruity delicacy"
+keywords = Array[int]([3])
+value = 5
+stackable = false
+protein = 0
+nutrients = 0
+painkilling = 0
+feverfighting = 0
+decongestant = false
+nausea = false
+antinausea = false
+hp_recovered = 3
+energy_recovered = 35
+will_recovered = 0
+hunger_recovered = 40
+burnable = false
+burn_time = 0

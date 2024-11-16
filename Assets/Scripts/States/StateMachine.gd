@@ -7,6 +7,8 @@ var entity:CharacterBody2D=null
 
 @onready var woodchopping: Woodchopping = $Woodchopping
 @onready var normal:NormalState = $Normal
+@onready var hearth: HearthState = $Hearth
+
 
 func _ready():
 	process_mode=Node.PROCESS_MODE_DISABLED
@@ -43,3 +45,4 @@ func switch_state(s:String):
 	match s:
 		"woodchopping":change_state(woodchopping)
 		"normal":change_state(normal)
+		"hearth":change_state(hearth)
